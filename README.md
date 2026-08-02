@@ -5,7 +5,7 @@ Synchronizes the **vertical Session Ring navigation** of a Novation Launchpad X 
 
 ## Demo
 
-![Launchpad Duo Sync Demo](images/demo.gif)
+![Launchpad Duo Sync Demo](images/Demo.gif)
 
 
 
