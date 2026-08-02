@@ -1,56 +1,61 @@
-# Launchpad-Duo-Sync-for-Ableton-Live
-Synchronize vertical session navigation across multiple Novation Launchpads in Ableton Live while keeping independent horizontal track offsets.
+# Launchpad Duo Sync
 
+Synchronizes the **vertical Session Ring navigation** of a Novation Launchpad X and Launchpad Mini MK3 in Ableton Live, while allowing independent horizontal navigation.
 
-Launchpad Duo Sync is an Ableton Live Remote Script that synchronizes the vertical Session navigation of multiple Novation Launchpads while allowing each controller to maintain its own independent horizontal track position.
+## Validated setup
 
-Designed for live performers who use two Launchpads side by side, it enables both controllers to move through scenes together without sacrificing independent clip access.
+- Ableton Live 12.3.5
+- macOS 26.5.2
+- Novation Launchpad X
+- Novation Launchpad Mini MK3
 
-Features
+## Default behavior
 
-* Synchronizes vertical scene navigation across multiple Launchpads
-* Independent horizontal track offsets for each controller
-* Configurable scene jump size (1, 8, 9, …)
-* Optional horizontal position lock
-* Preserves the original Launchpad workflow
-* Compatible with Ableton Live 12.x
-* Tested on macOS
-* Built for Novation Launchpad X and Launchpad Mini MK3
+- Launchpad X starts at tracks **1–8**.
+- Launchpad Mini MK3 starts at tracks **10–17**.
+- Pressing **Up** or **Down** on either Launchpad moves both Session Rings by **9 scenes**.
+- Horizontal lock is disabled by default, so left/right navigation remains independent.
+- Scene offsets are clamped at zero.
+- The official Novation scripts continue handling LEDs, clip launching, mixer modes, and device modes.
 
+## Installation
 
+1. Quit Ableton Live.
+2. Copy the `LaunchpadDuoSync` folder to:
 
-EXAMPLE SETUP
+   ```text
+   ~/Music/Ableton/User Library/Remote Scripts/
+   ```
 
-* Launchpad X           Launchpad Mini
+3. Start Ableton Live.
+4. Open **Settings → Link, Tempo & MIDI**.
+5. Keep the official rows for:
+   - Launchpad X with its DAW input and output
+   - Launchpad Mini MK3 with its DAW input and output
+6. Add another Control Surface row:
+   - Control Surface: `LaunchpadDuoSync`
+   - Input: `None`
+   - Output: `None`
 
-Tracks 1–8            Tracks 10–17
-     ▲                     ▲
-     │                     │
-     └─────────┬───────────┘
-               │
-      Shared vertical navigation
+See [docs/INSTALL.md](docs/INSTALL.md) for detailed setup and troubleshooting.
 
+## Configuration
 
-      Both Launchpads always move together through scenes while remaining horizontally independent.
+Edit `LaunchpadDuoSync/config.py` while Live is closed.
 
-Why?
+```python
+VERTICAL_STEP_SCENES = 9
+LOCK_HORIZONTAL = False
+LAUNCHPAD_X_TRACK_OFFSET = 0
+LAUNCHPAD_MINI_TRACK_OFFSET = 9
+```
 
-Ableton Live allows multiple Launchpads, but each controller normally has its own independent Session Ring.
+Track offsets are zero-based.
 
-Launchpad Duo Sync links the vertical navigation of these Session Rings, creating a more intuitive workflow for performances spanning multiple Launchpads.
+## Compatibility note
 
+This script accesses Ableton Live's internal Control Surface objects. Ableton does not publish these APIs as a stable third-party SDK, so future Live updates may require changes.
 
+## License
 
-
-Roadmap
-
-* Support for Launchpad Pro MK3
-* Support for Launchpad Pro
-* User configuration UI
-* Custom navigation modes
-* Dynamic controller discovery
-* Windows compatibility
-
-License
-
-MIT License
+MIT. See [LICENSE](LICENSE).
