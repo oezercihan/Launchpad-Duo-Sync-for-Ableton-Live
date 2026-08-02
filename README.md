@@ -2,6 +2,14 @@
 
 Synchronizes the **vertical Session Ring navigation** of a Novation Launchpad X and Launchpad Mini MK3 in Ableton Live, while allowing independent horizontal navigation.
 
+
+## Demo
+
+![Launchpad Duo Sync Demo](images/demo.gif)
+
+
+
+
 ## Validated setup
 
 - Ableton Live 12.3.5
