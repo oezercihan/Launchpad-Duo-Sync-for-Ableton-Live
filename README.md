@@ -1,3 +1,8 @@
+![Ableton Live 12.3+](https://img.shields.io/badge/Ableton-Live%2012.3+-000000?logo=abletonlive&logoColor=white)
+![macOS](https://img.shields.io/badge/macOS-Tested-000000?logo=apple&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
+![MIT License](https://img.shields.io/badge/License-MIT-22C55E)
+
 # Launchpad Duo Sync
 
 Synchronizes the **vertical Session Ring navigation** of a Novation Launchpad X and Launchpad Mini MK3 in Ableton Live, while allowing independent horizontal navigation.
