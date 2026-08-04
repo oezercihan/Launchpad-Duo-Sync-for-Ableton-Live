@@ -17,7 +17,9 @@ Version 2.0 adds configurable model selection, support for mixed Launchpad combi
 - Raw Ableton Control Surface names as a fallback for future models
 
 ##Demo
-images/Demo.gif
+
+![Launchpad Duo Sync Demo](images/Demo.gif)
+
 
 ## Installation
 
