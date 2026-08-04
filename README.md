@@ -16,6 +16,9 @@ Version 2.0 adds configurable model selection, support for mixed Launchpad combi
 - Friendly model names in `config.py`
 - Raw Ableton Control Surface names as a fallback for future models
 
+##Demo
+images/Demo.gif
+
 ## Installation
 
 See [`docs/INSTALLATION.md`](docs/INSTALLATION.md) for the full installation and update guide.
