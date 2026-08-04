@@ -1,2 +1,11 @@
-Release asset placeholder.
-Use LaunchpadDuoSync-v1.0.0.zip from the repository root for installation.
+v1.0.0
+
+* Initial Release
+* Launchpad X + Mini MK3
+
+v2.0.0
+
+* Generic Launchpad Support
+* Multiple identical devices
+* Friendly configuration
+* Improved documentation
