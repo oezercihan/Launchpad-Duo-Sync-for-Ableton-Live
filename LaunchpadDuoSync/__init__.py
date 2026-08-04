@@ -1,4 +1,4 @@
-from .duo_sync import LaunchpadDuoSync
+from .multi_sync import LaunchpadDuoSync
 
 
 def create_instance(c_instance):

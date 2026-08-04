@@ -1,27 +1,57 @@
-# Launchpad Duo Sync configuration
-# Track offsets are zero-based: 0 = track 1, 9 = track 10.
+"""Launchpad Duo Sync v2.0 configuration.
 
-LAUNCHPAD_X_TRACK_OFFSET = 0
-LAUNCHPAD_MINI_TRACK_OFFSET = 9
+For normal use, edit only DEVICES and the options at the bottom.
 
-# Place the controllers at the configured track offsets once when the script connects.
-INITIALIZE_HORIZONTAL_LAYOUT = True
+Friendly model names are accepted, for example:
+    Launchpad X
+    Launchpad Mini MK3
+    Launchpad Pro MK3
+    Launchpad Pro
+    Launchpad MK2
+    Launchpad
 
-# True: keep both controllers permanently at the configured track ranges.
-# False: left/right navigation remains available independently on each Launchpad.
-LOCK_HORIZONTAL = False
+Multiple identical devices use instance_index:
+    0 = first matching Control Surface row in Ableton Live
+    1 = second matching row
+    2 = third matching row
 
-# Keep the two vertical scene positions linked.
-SYNC_VERTICAL = True
+track_offset is zero-based:
+    0 = track 1
+    8 = track 9
+    9 = track 10
+"""
 
-# Number of scenes moved for each single up/down button step.
+DEVICES = [
+    {
+        "label": "Left Launchpad",
+        "model": "Launchpad X",
+        "instance_index": 0,
+        "track_offset": 0,
+    },
+    {
+        "label": "Right Launchpad",
+        "model": "Launchpad Mini MK3",
+        "instance_index": 0,
+        "track_offset": 9,
+    },
+]
+
+# Shared vertical movement in scenes per Up/Down press.
 VERTICAL_STEP_SCENES = 9
 
-# Number of Ableton scheduler ticks before connecting.
+# False: each Launchpad can move horizontally on its own.
+# True: every Launchpad is kept at its configured track_offset.
+LOCK_HORIZONTAL = False
+
+# Apply each configured track_offset when the script connects.
+INITIALIZE_HORIZONTAL_LAYOUT = True
+
+# Enable shared vertical navigation.
+SYNC_VERTICAL = True
+
+# Advanced settings. Most users should leave these unchanged.
+ALLOW_PARTIAL_SURFACE_MATCH = False
 STARTUP_DELAY_TICKS = 50
-
-# Poll once per scheduler tick for responsive navigation.
 POLL_TICKS = 1
-
-# Write a line to Ableton's Log.txt for every synchronized scene change.
+RECONNECT_TICKS = 25
 VERBOSE_SYNC_LOGGING = False

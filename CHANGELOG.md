@@ -1,10 +1,27 @@
 # Changelog
 
-## 1.0.0 — 2026-08-02
+## 2.0.0 — 2026-08-04
 
-- Synchronizes vertical Session Ring movement between Launchpad X and Launchpad Mini MK3.
-- Configurable vertical step size; default is nine scenes.
-- Independent horizontal navigation by default.
-- Optional horizontal lock.
-- Initial track layout: X on tracks 1–8, Mini MK3 on tracks 10–17.
-- Startup logging and duplicate-surface warnings.
+### Added
+
+- Friendly Launchpad model names in `config.py`
+- Support for mixed Launchpad model combinations
+- Support for multiple identical devices through `instance_index`
+- Support for configurations with two or more controllers
+- Raw Ableton Control Surface name fallback for future or unlisted models
+- Improved configuration validation and connection logging
+- Expanded installation, update, configuration, and troubleshooting documentation
+
+### Retained
+
+- Shared vertical Session navigation
+- Configurable scene jump size
+- Independent horizontal navigation
+- Optional Horizontal Lock
+- Configurable startup track offsets
+
+### Tested
+
+- Ableton Live 12.3.5
+- macOS 26.5.2
+- Launchpad X + Launchpad Mini MK3
